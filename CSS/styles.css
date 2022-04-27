@@ -12,7 +12,7 @@
 --border-color:#ECECEC;
 --bg-hero:#C4C4C4;
 --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
---time: 1000ms;
+--time: 250ms;
 /* --trans: border-color var(--time) var(--cubic-bezier),
 fill var(--time) var(--cubic-bezier); */
 --trans-for-link: color var(--time) var(--cubic-bezier);
@@ -265,7 +265,7 @@ img {
 .backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
-    visibility: hidden;
+   
 }
 
 .backdrop {
@@ -275,19 +275,19 @@ img {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.2);
-    transition: transform 500ms var(--cubic-bezier),
-    opacity 500ms var(--cubic-bezier),
-    visibility 500ms var(--cubic-bezier);
-    z-index: 1;
+    opacity: 1;
+    transition: opacity 500ms var(--cubic-bezier);
+    z-index: 2;
   
 } 
-
-.backdrop.is-hidden .modal {
+.backdrop.is-hidden {
     opacity: 0;
     pointer-events: none;
-    transform: translate(-50%, -50%) scale(0.1) scale(2, 0.1) rotate(0);
-   
 
+}
+.backdrop.is-hidden .modal {
+transform: translate(-50%, -50%) scale(0.5);
+  
 }
 .modal {
         
@@ -301,16 +301,15 @@ img {
         0px 1px 1px rgb(0 0 0 / 14%),
         0px 2px 1px rgb(0 0 0 / 20%);
         border-radius: 4px;
-        opacity: 1;
-        visibility: visible;
-        pointer-events: initial;
+        ;
 
-        transform: translate(-50%, -50%) scale(1) scale(1) rotate(1turn);
-        transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-        transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+        transform: translate(-50%, -50%)  scale(1);
+        transition: transform 2000ms var(--cubic-bezier);
+        
     } 
     .modal-close-icon {
         fill: #000000;
+       
     }
     .modal-close {
         position: absolute;      
